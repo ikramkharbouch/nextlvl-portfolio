@@ -1,0 +1,21 @@
+.page-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    // background-color: #ff00ff; /* Bright color for the background */
+  }
+  
+  .content {
+    text-align: center;
+    color: #fff;
+    opacity: 0;
+    transition: opacity 1s ease;
+  }
+  
+  .page-container:hover .content {
+    opacity: 1; /* Fade in content when the page scales in */
+  }
+  

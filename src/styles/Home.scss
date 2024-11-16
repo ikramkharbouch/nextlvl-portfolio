@@ -1,0 +1,210 @@
+@import "./variables";
+
+.home-container {
+  margin-left: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  color: $text-color;
+  min-height: 100%;
+}
+
+.intro-section {
+  display: flex;
+  height: max-content;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.intro-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  width: 30rem;
+  height: 25rem;
+  width: max-content;
+}
+
+.circular-img {
+  width: 15rem;
+  height: 15rem;
+  border-radius: 50%;
+  background-color: lightgray;
+}
+
+.circular-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.about-section {
+  text-align: left;
+}
+
+.about-title {
+  margin-top: 1rem;
+  font-size: 2rem;
+  font-family: "Montserrat", sans-serif;
+  text-shadow: 1px 1px 3px $heading-color, 1px 1px 3px #ccc;
+  color: $heading-color;
+}
+
+.about-text {
+  font-size: 15px;
+  line-height: 1.4;
+  margin-top: 0.4rem;
+  margin-right: 3rem;
+}
+
+.btn-container {
+  text-align: left;
+  margin-top: 1rem;
+}
+
+.key-skills {
+  margin-top: 2rem;
+}
+
+ .key-skills h1 {
+  font-family: "Montserrat", sans-serif;
+  text-align: left;
+}
+
+.ladder-container {
+  margin-top: 10rem;
+}
+
+.companies {
+  text-align: left;
+  margin-top: 4rem;
+}
+
+.contact {
+  margin-top: 2rem;
+  height: 100%;
+}
+
+/* Button Styles */
+.blob-button {
+  background-color: $secondary-color; /* Pink background */
+  color: white; /* White text */
+  padding: 15px 40px; /* Padding inside the button */
+  font-size: 12px; /* Font size of the text */
+  border: none; /* Remove default border */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: all 0.3s ease-in-out; /* Smooth transition on hover */
+  font-weight: bold; /* Make text bold */
+  text-transform: uppercase; /* Uppercase text */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+  position: relative; /* For positioning purposes */
+  overflow: hidden; /* Hide anything that overflows the blob */
+  display: inline-block;
+  text-align: center;
+  outline: none;
+  margin-top: 1rem;
+}
+
+/* Blob animation */
+.blob-button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200%;
+  height: 200%;
+  background-color: rgba(255, 255, 255, 0.1); /* Light white blob for effect */
+  transform: translate(-50%, -50%);
+  animation: blob 2s infinite ease-in-out;
+  pointer-events: none; /* Make sure the blob doesn't interfere with clicks */
+}
+
+/* Hover effect */
+.blob-button:hover {
+  background-color: #ff3399; /* Darker pink on hover */
+  transform: scale(1.05); /* Slightly enlarge the button */
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+}
+
+/* Active effect */
+.blob-button:active {
+  transform: scale(0.98); /* Slightly shrink the button on click */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Lighter shadow when clicked */
+}
+
+/* Blob animation keyframe */
+@keyframes blob {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.2);
+  }
+}
+
+h1 {
+  text-align: left;
+}
+
+.home-avatar {
+  min-width: 200px;
+  min-height: 200px;
+  max-width: 200px;
+  max-height: 200px;
+  overflow: hidden;
+  display: flex;
+  border-radius: 50%;
+
+}
+
+.home-avatar img {
+  max-width: inherit;
+  max-height: inherit;
+  height: inherit;
+  width: inherit;
+  aspect-ratio: 1 / 1; /* ↔️ is double the ↕️ */
+  object-fit: cover;
+  image-rendering: crisp-edges;
+}
+
+.photo-intro {
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  font-size: 2rem;
+}
+
+.photo-intro p {
+  width: 60%;
+  font-size: 0.8rem;
+}
+
+@media (max-width: 600px) {
+  .home-container {
+    margin: 0 1rem 0 1rem;
+  }
+  .intro-section {
+    margin-top: 1rem;
+    max-width: 100%;
+  }
+
+  .home-avatar {
+    min-width: 100px;
+    min-height: 100px;
+    max-width: 100px;
+    max-height: 100px;
+    overflow: hidden;
+    display: flex;
+    border-radius: 50%;
+  }
+
+  .photo-intro {
+    font-size: 1rem;
+  }
+}

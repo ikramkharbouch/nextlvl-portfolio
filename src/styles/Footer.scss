@@ -1,0 +1,90 @@
+@import "./variables";
+
+/* Geeky Footer Styles */
+.footer {
+  background-color: #181818; /* Dark background for geek vibes */
+  color: #fff; /* Light text for contrast */
+  padding: 40px 0;
+  font-size: 12px; /* Smaller text size */
+  text-align: left; /* Align text to the left */
+  border-top: 5px solid #4a4a4a; /* Medium-dark grayish border */
+  position: relative;
+  margin-top: 3rem;
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-title {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: $heading-color; /* Bright pink text for that geeky vibe */
+}
+
+.footer-subtitle {
+  font-family: "Courier New", Courier, monospace;
+  color: #d1d1d1;
+  margin-bottom: 20px;
+}
+
+.footer-tech-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 12px; /* Smaller font size */
+}
+
+.footer-tech-stack span {
+  font-family: "Courier New", Courier, monospace;
+  color: #d1d1d1;
+  transition: color 0.3s;
+}
+
+.footer-tech-stack span:hover {
+  color: #ff007f; /* Color change on hover */
+}
+
+.footer-social {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.footer-social a {
+  font-size: 18px;
+  color: #d1d1d1;
+  transition: color 0.3s ease;
+}
+
+.footer-social a:hover {
+  color: #ff007f; /* Pink color on hover */
+}
+
+.footer-code {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 10px;
+  color: #888;
+  margin-top: 30px;
+  display: block;
+}
+
+.footer-code span {
+  color: #ff007f;
+}
+
+/* Make it responsive */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    padding: 0 20px;
+    text-align: center;
+  }
+}

@@ -1,0 +1,39 @@
+@import "./variables";
+
+.companies-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 2rem;
+    font-family: 'Montserrat', 'sans-serif';
+}
+
+.company-box {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Ensures content doesn't overflow */
+    background-color: #fff;
+}
+
+.company-box img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* Ensures the image maintains its aspect ratio */  
+}
+
+h3 {
+    text-align: center;
+    font-weight: 200;
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+}
+
+a {
+    text-decoration: none; /* no underline */
+    color: $text-color;
+}

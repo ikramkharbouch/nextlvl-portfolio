@@ -1,0 +1,154 @@
+@import "./variables";
+
+.ladder-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  position: relative;
+  height: max-content;
+  width: 200px;
+}
+
+.ladder {
+  display: flex;
+}
+
+.box {
+  width: max-content;
+  height: max-content;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.9rem;
+  font-weight: bold;
+  position: absolute;
+  left: 5px;
+  animation: boxAppear 0.5s ease-out;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+@keyframes boxAppear {
+  from {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  background-color: $bg-color-dark;
+  margin-left: 1rem;
+}
+
+.skill {
+  text-align: left;
+  background-color: #d15b8d;
+  padding: 12px;
+}
+
+.ladder-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ladder-item {
+  background-color: #383838;
+  color: white;
+  padding: 15px;
+  margin: 10px;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.ladder-item:hover {
+  background-color: #505050;
+}
+
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-content {
+  background-color: #181818;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 500px;
+  text-align: center;
+}
+
+.close-popup {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  color: white;
+  font-size: 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.close-popup:hover {
+  color: #ff4f8b;
+}
+
+h2 {
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+.tools-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.tool-badge {
+  background-color: #333;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.tool-badge:hover {
+  background-color: #ff80b3;
+}
+
+@media (max-width: 600px) {
+  .ladder-container {
+    max-width: 100%;
+  }
+
+  .box {
+    font-size: 0.7rem;
+    cursor: pointer;
+  }
+  .tools {
+    display: none;
+  }
+  .popup-content {
+    width: 90%;
+    max-width: 300px;
+  }
+}

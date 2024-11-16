@@ -1,0 +1,24 @@
+/* Arrow styling and animation */
+@import "./variables";
+
+.arrows-container {
+  display: flex;
+}
+.arrow {
+  font-size: 20px; /* Adjust size of the arrow */
+  color: $heading-color;
+  animation: bounce 1.5s infinite ease-in-out;
+}
+
+/* Keyframes for the bounce animation */
+@keyframes bounce {
+  0% {
+    transform: translateY(0); /* Start at original position */
+  }
+  50% {
+    transform: translateY(10px); /* Move down */
+  }
+  100% {
+    transform: translateY(0); /* Return to original position */
+  }
+}

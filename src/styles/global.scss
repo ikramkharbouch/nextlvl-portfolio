@@ -1,0 +1,111 @@
+@import "./variables";
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  background-color: $bg-color-dark;
+  height: 100%; /* Ensure the body takes up full height of the screen */
+  margin: 0;
+  display: flex;
+  flex-direction: column; /* Stack content and footer vertically */
+  font-family: 'Poppins', sans-serif;
+}
+
+
+.App {
+  min-height: 100vh;
+  overflow: auto; /* Enable scrolling if content overflows */
+  flex-grow: 0; /* Don't expand to fill available space */
+  flex-shrink: 0; /* Prevent shrinking */
+  flex-basis: auto; /* Content takes only the height it needs */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
+  color: $text-color;
+  padding: 2rem 3rem;
+}
+
+.menu.scrolled {
+  background-color: $bg-color-dark; /* Dark background when scrolled */
+  z-index: 999;
+}
+
+.menu-items {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  gap: 1rem;
+  padding-top: 2rem;
+  padding-top: 0;
+}
+
+.menu-items > li > p {
+  background: #111;
+  color: #fff;
+  text-shadow: 1px 1px 3px #f0f0f0, 1px 1px 10px #ccc;
+  font-size: 15px;
+  text-align: center;
+  cursor: pointer;
+  
+}
+
+.menu-items > li > p:hover {
+    font-size: 20px;
+    text-shadow: 1px 1px 3px palevioletred, 1px 1px 10px #ccc;
+}
+
+.theme-switcher {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: $bg-color-dark;
+  transition: transform 0.3s ease;
+}
+
+.theme-switcher:hover {
+  transform: scale(1.2);
+}
+
+.theme-switcher {
+  margin-left: auto;
+}
+
+.uneven-wave-button {
+  padding: 4px 12px;
+  border-radius: 5px;
+  background-color: $heading-color;
+  font-weight: bold;
+  font-family: "Montserrat";
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.uneven-wave-button:hover {
+  background-color: $secondary-color; /* Darker pink (hover effect) */
+  padding: 8px 16px;
+}
+
+p { 
+  margin: 0;
+}
+
+@media (max-width: 600px) {
+  .menu {
+    padding: 1rem;
+  }
+}
+
