@@ -8,15 +8,15 @@ import Menu from "./components/Menu.tsx";
 import Projects from "./pages/Projects.tsx";
 import ContactPage from "./pages/Contact.tsx";
 import Blog from "./pages/Blog.tsx";
+import Footer from "./components/Footer.tsx";
 
 function App() {
   return (
     <ThemeProvider>
       <Router>
         <div className="app-layout">
-          <Menu />
-
           <div className="content">
+            <Menu />
             <Routes>
               <Route exact path="/" element={<Home />}></Route>
               <Route path="/experience" element={<Experience />} />
@@ -25,6 +25,8 @@ function App() {
               <Route path="/blog" element={<Blog />} />
             </Routes>
           </div>
+
+          <Footer />
         </div>
       </Router>
     </ThemeProvider>

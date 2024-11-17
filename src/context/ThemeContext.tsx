@@ -1,23 +1,25 @@
-// src/context/ThemeContext.tsx
-import React, { createContext, useState, useEffect } from "react";
+import React, { createContext, useState, useContext, useEffect } from 'react';
 
-const ThemeContext = createContext({
-  theme: "light",
-  toggleTheme: () => {},
-});
+type ThemeContextType = {
+  theme: 'light' | 'dark';
+  toggleTheme: () => void;
+};
 
-export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
-  const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
+const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
+
+export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  const [theme, setTheme] = useState<'light' | 'dark'>(() => {
+    const savedTheme = localStorage.getItem('theme');
+    return (savedTheme as 'light' | 'dark') || 'light';
+  });
 
   useEffect(() => {
-    document.body.setAttribute("data-theme", theme);
-    localStorage.setItem("theme", theme); // Save theme to localStorage
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
   }, [theme]);
 
   const toggleTheme = () => {
-    setTheme(theme === "light" ? "dark" : "light");
-    localStorage.setItem("theme", theme);
-    document.documentElement.setAttribute("data-theme", theme); // Set the theme in the root element
+    setTheme((prev) => (prev === 'light' ? 'dark' : 'light'));
   };
 
   return (
@@ -27,4 +29,10 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
   );
 };
 
-export default ThemeContext;
+export const useTheme = (): ThemeContextType => {
+  const context = useContext(ThemeContext);
+  if (!context) {
+    throw new Error('useTheme must be used within a ThemeProvider');
+  }
+  return context;
+};

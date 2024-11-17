@@ -13,7 +13,7 @@
 }
 
 .menu-item {
-  color: white;
+  color: var(--text-color);
   text-decoration: none;
   font-size: 15px;
   max-height: max-content;
@@ -30,7 +30,7 @@
 
 .experience-container {
   margin: 0 3rem 0 3rem;
-  color: $text-color;
+  color: var(--text-color);
 }
 
 .timeline-container {
@@ -148,7 +148,7 @@
 @media (max-width: 600px) {
   .experience-container {
     margin: 0 1rem;
-    color: $text-color;
+    color: var(--text-color);
   }
 
   .timeline-item::before {

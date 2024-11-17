@@ -12,7 +12,7 @@ type Article = {
 const Blog = () => {
   const [article, setArticle] = useState<Article | null>(null);
 
-  useEffect(() => {
+  useEffect((): any => {
     fetch('https://dev.to/api/articles?username=ikramkharbouch')
       .then((response) => response.json())
       .then((data) => {
@@ -27,7 +27,6 @@ const Blog = () => {
       <h2>Blog</h2>
       {article ? (
         <div className="blog-card">
-          <img src={article.cover_image || '/default-cover.jpg'} alt={article.title} />
           <h3>{article.title}</h3>
           <p>{article.description}</p>
           <a href={article.url} target="_blank" rel="noopener noreferrer">

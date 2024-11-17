@@ -15,7 +15,7 @@ const Companies = () => {
       <div className="companies-container">
         
         {companies.map((company, index) => (
-          <a href={company.url} target="_blank">
+          <a href={company.url} target="_blank" key={index}>
           <div>
             <div key={index} className="company-box">
               <img

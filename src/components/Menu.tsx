@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import React, { useEffect, useState } from "react";
-import ThemeSwitcher from "../context/ThemeSwitcher.tsx";
 import { Link } from "react-router-dom";
+import ThemeToggle from "./ThemeToggle.tsx";
 
 const Menu = () => {
   const [scrolled, setScrolled] = useState<boolean>(false);
@@ -34,8 +34,8 @@ const Menu = () => {
   return (
     <div className={`menu ${scrolled ? 'scrolled' : ''}`}>
       <ul className="menu-items">
-        {menuItems.map((item) => (
-          <li>
+        {menuItems.map((item, index) => (
+          <li key={index}>
             <p>
               {" "}
               <Link to={item.link} className="menu-item">
@@ -45,8 +45,7 @@ const Menu = () => {
           </li>
         ))}
       </ul>
-      {/* to work on it later */}
-      {/* <ThemeSwitcher /> Add switcher to the right */}
+      <ThemeToggle />
     </div>
   );
 };

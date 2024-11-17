@@ -26,12 +26,12 @@
   }
   
   .popup-content {
-    background-color: #2c2c2c;
+    background-color: var(--popup-bg);
     padding: 20px;
     border-radius: 10px;
     width: 90%;
     max-width: 500px;
-    color: white;
+    color: var(--text-color);
     text-align: center;
     opacity: 0;
     transform: rotate(180deg);

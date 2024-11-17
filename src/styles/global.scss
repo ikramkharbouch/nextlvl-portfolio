@@ -1,6 +1,6 @@
 @import "./variables";
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap");
 
 * {
   margin: 0;
@@ -8,15 +8,23 @@
   box-sizing: border-box;
 }
 
-html, body {
-  background-color: $bg-color-dark;
+html,
+body {
+  background-color: var(--bg-color);
   height: 100%; /* Ensure the body takes up full height of the screen */
+  min-height: 100vh;
   margin: 0;
   display: flex;
   flex-direction: column; /* Stack content and footer vertically */
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
+.app-layout {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 
 .App {
   min-height: 100vh;
@@ -34,13 +42,14 @@ html, body {
   justify-content: center;
   justify-content: space-between;
   align-items: center;
-  color: $text-color;
+  color: var(--text-color);
   padding: 2rem 3rem;
 }
 
 .menu.scrolled {
-  background-color: $bg-color-dark; /* Dark background when scrolled */
+  background-color: var(--bg-color);
   z-index: 999;
+  border-bottom: 2px solid var(--ladderItem);
 }
 
 .menu-items {
@@ -53,18 +62,16 @@ html, body {
 }
 
 .menu-items > li > p {
-  background: #111;
-  color: #fff;
+  color: var(--text-color);
   text-shadow: 1px 1px 3px #f0f0f0, 1px 1px 10px #ccc;
   font-size: 15px;
   text-align: center;
   cursor: pointer;
-  
 }
 
 .menu-items > li > p:hover {
-    font-size: 20px;
-    text-shadow: 1px 1px 3px palevioletred, 1px 1px 10px #ccc;
+  font-size: 20px;
+  text-shadow: 1px 1px 3px palevioletred, 1px 1px 10px #ccc;
 }
 
 .theme-switcher {
@@ -72,7 +79,7 @@ html, body {
   border: none;
   font-size: 1.5rem;
   cursor: pointer;
-  color: $bg-color-dark;
+  background-color: var(--bg-color);
   transition: transform 0.3s ease;
 }
 
@@ -99,7 +106,7 @@ html, body {
   padding: 8px 16px;
 }
 
-p { 
+p {
   margin: 0;
 }
 
@@ -108,4 +115,3 @@ p {
     padding: 1rem;
   }
 }
-

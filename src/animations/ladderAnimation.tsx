@@ -51,7 +51,7 @@ const LadderAnimation: React.FC = () => {
       {
         id: 1,
         skill: "Full-Stack Development",
-        tools: ["React", "Node.js", "Express", "MongoDB", "PostgreSQL"],
+        tools: ["React", "Node.js", "Express", "MongoDB", "PostgreSQL", "Angular", 'PHP'],
       },
       {
         id: 2,
@@ -80,7 +80,9 @@ const LadderAnimation: React.FC = () => {
         tools: ["Jira", "Trello", "Slack"],
       },
     ];
-    setSkills(keySkills);
+    const reversedKeySkills = [...keySkills].reverse();
+
+    setSkills(reversedKeySkills);
   }, []);
 
   // Check if the screen width is mobile-sized
@@ -106,7 +108,7 @@ const LadderAnimation: React.FC = () => {
       <div className="ladder-container">
         <div className="ladder">
           {skills.map((item, index) => (
-            <>
+            <div key={index}>
               <motion.div
                 key={index}
                 className="box"
@@ -116,20 +118,24 @@ const LadderAnimation: React.FC = () => {
               >
                 <div
                   className="skill"
-                  key={item.id}
-                  onClick={isMobile ? () => handleItemClick(item.tools) : undefined}
-                  >
+                  key={index}
+                  onClick={
+                    isMobile ? () => handleItemClick(item.tools) : undefined
+                  }
+                >
                   {item.skill}
                 </div>
                 <div className="tools">
-                  {item.tools.map((tool, idx) => (
-                    <span key={idx} className="tool-badge">
-                      {tool}
-                    </span>
+                  {item.tools.map((tool, index) => (
+                    <div key={index}>
+                      <span key={index} className="tool-badge">
+                        {tool}
+                      </span>
+                    </div>
                   ))}
                 </div>
               </motion.div>
-            </>
+            </div>
           ))}
         </div>
       </div>
@@ -142,9 +148,11 @@ const LadderAnimation: React.FC = () => {
             <h2>Tech Toolbox</h2>
             <div className="tools-container">
               {popupContent.map((tool, index) => (
-                <span key={index} className="tool-badge">
-                  {tool}
-                </span>
+                <div key={index}>
+                  <span key={index} className="tool-badge">
+                    {tool}
+                  </span>
+                </div>
               ))}
             </div>
           </div>

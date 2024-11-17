@@ -42,9 +42,7 @@ const ContactPage: React.FC = () => {
 
   const formRef = useRef<HTMLFormElement>(null);
 
-  console.log(state);
-
-  useEffect(() => {
+  useEffect((): any => {
     if (state.succeeded) {
       // If the form submission is successful, show the success popup
       setIsPopupVisible(true);
@@ -62,14 +60,12 @@ const ContactPage: React.FC = () => {
         email: "",
         message: "",
       });
-
-      console.log("reset here");
-
       // Hide the popup after 3 seconds
       setTimeout(() => {
         setIsPopupVisible(false);
       }, 3000);
     }
+
   }, [state.succeeded]); // Runs only when state.succeeded changes
 
   return (

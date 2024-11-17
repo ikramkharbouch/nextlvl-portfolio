@@ -2,14 +2,15 @@
 
 /* Geeky Footer Styles */
 .footer {
-  background-color: #181818; /* Dark background for geek vibes */
+  background-color: var(--bg-color); /* Dark background for geek vibes */
   color: #fff; /* Light text for contrast */
   padding: 40px 0;
   font-size: 12px; /* Smaller text size */
   text-align: left; /* Align text to the left */
-  border-top: 5px solid #4a4a4a; /* Medium-dark grayish border */
+  border-top: 5px solid var(--footer-top); /* Medium-dark grayish border */
   position: relative;
   margin-top: 3rem;
+  font-weight: bold;
 }
 
 .footer-container {
@@ -31,7 +32,7 @@
 
 .footer-subtitle {
   font-family: "Courier New", Courier, monospace;
-  color: #d1d1d1;
+  color: var(--footer-text);
   margin-bottom: 20px;
 }
 
@@ -44,7 +45,7 @@
 
 .footer-tech-stack span {
   font-family: "Courier New", Courier, monospace;
-  color: #d1d1d1;
+  color: var(--footer-text);
   transition: color 0.3s;
 }
 
@@ -60,7 +61,7 @@
 
 .footer-social a {
   font-size: 18px;
-  color: #d1d1d1;
+  color: var(--footer-text);
   transition: color 0.3s ease;
 }
 
@@ -71,7 +72,7 @@
 .footer-code {
   font-family: "Courier New", Courier, monospace;
   font-size: 10px;
-  color: #888;
+  color: var(--footer-text);
   margin-top: 30px;
   display: block;
 }
