@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/nextlvl-portfolio/static/css/main.59ed4c7e.css",
+    "main.js": "/nextlvl-portfolio/static/js/main.42bf4422.js",
+    "index.html": "/nextlvl-portfolio/index.html",
+    "main.59ed4c7e.css.map": "/nextlvl-portfolio/static/css/main.59ed4c7e.css.map",
+    "main.42bf4422.js.map": "/nextlvl-portfolio/static/js/main.42bf4422.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.59ed4c7e.css",
+    "static/js/main.42bf4422.js"
+  ]
+}
